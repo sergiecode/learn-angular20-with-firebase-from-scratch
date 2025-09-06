@@ -4,11 +4,7 @@ import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { MensajeChat } from '../models/chat';
 import { AuthService } from './auth';
 import { FirestoreService } from './firestore';
-
-const openaiServiceMock = {
-  convertirHistorialAOpenAI: (historial: MensajeChat[]) => historial,
-  enviarMensaje: async (contenido: string, historial: any) => 'Respuesta mock de OpenAI'
-};
+import { OpenaiService } from './openai';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +13,7 @@ export class ChatService {
   
   private authService = inject(AuthService);
   private firestoreService = inject(FirestoreService);
-
-  // Todavía no implementados:
-  // private openaiService = inject(OpenaiService);
+  private openaiService = inject(OpenaiService);
   
   // BehaviorSubject para mantener la lista de mensajes del chat actual
   // BehaviorSubject siempre tiene un valor inicial y emite el último valor a nuevos suscriptores
@@ -110,34 +104,16 @@ export class ChatService {
       // Solo tomamos los últimos 6 mensajes para no exceder límites de tokens
       // Esto deja más espacio para respuestas más completas
 
-      
-
-      // const historialParaOpenAI = this.openaiService.convertirHistorialAOpenAI(
-      //   mensajesActuales.slice(-6)
-      // );
-      const historialParaOpenAI = openaiServiceMock.convertirHistorialAOpenAI(
+      const historialParaOpenAI = this.openaiService.convertirHistorialAOpenAI(
         mensajesActuales.slice(-6)
       );
       
-      // Enviamos el mensaje a ChatGPT y esperamos la respuesta (usando mock)
-      // const respuestaAsistente = await firstValueFrom(
-      //   this.openaiService.enviarMensaje(contenidoMensaje, historialParaOpenAI)
-      // );
-      const respuestaAsistente = await openaiServiceMock.enviarMensaje(
-        contenidoMensaje, 
-        historialParaOpenAI
+      // Enviamos el mensaje a ChatGPT y esperamos la respuesta
+      const respuestaAsistente = await firstValueFrom(
+        this.openaiService.enviarMensaje(contenidoMensaje, historialParaOpenAI)
       );
       
       // Creamos el mensaje con la respuesta del asistente
-      // const mensajeAsistente: MensajeChat = {
-      //   usuarioId: usuarioActual.uid,
-      //   contenido: respuestaAsistente,
-      //   fechaEnvio: new Date(),
-      //   tipo: 'asistente',
-      //   estado: 'enviado'
-      // };
-
-      // POR AHORA, como no tenemos OpenAI implementado, usamos un mock
       const mensajeAsistente: MensajeChat = {
         usuarioId: usuarioActual.uid,
         contenido: respuestaAsistente,
@@ -198,10 +174,7 @@ export class ChatService {
 
   chatListo(): boolean {
     const usuarioAutenticado = !!this.authService.obtenerUsuarioActual();
-    // const openaiConfigurado = this.openaiService.verificarConfiguracion();
-    
-    // Por ahora, como no tenemos OpenAI implementado, asumimos que siempre está configurado
-    const openaiConfigurado = true
+    const openaiConfigurado = this.openaiService.verificarConfiguracion();
     
     return usuarioAutenticado && openaiConfigurado;
   }

@@ -21,7 +21,13 @@ Indice
 16 Auth Service
 17 Chat Service
 18 Firestore Service
-19
+19 OpenAI Service
+20 
+21
+22
+23
+24
+25
 
 
 
