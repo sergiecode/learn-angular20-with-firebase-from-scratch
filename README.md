@@ -6,12 +6,12 @@ Indice
 1 Instalaciones necesarias (link al md correspondiente en carpeta clases)
 2 Iniciar proyecto angular (link)
 3 explicar-estructura-angular20
-4 Introduccion a Firebase
-5 Agregar Firebase a Angular 20 parte 1
-6 Introduccion a Open AI
-7 Agregar variables de entorno
-8
-9
+4 Crear repositorio en Github para manejar versiones
+5 Introduccion a Firebase
+6 Agregar Firebase a Angular 20 parte 1
+7 Introduccion a Open AI
+8 Agregar variables de entorno
+9 
 
 
 
