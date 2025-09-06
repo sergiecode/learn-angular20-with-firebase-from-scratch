@@ -1,13 +1,9 @@
 
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, firstValueFrom, of } from 'rxjs';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { MensajeChat } from '../models/chat';
 import { AuthService } from './auth';
-
-const firestoreServiceMock = {
-  obtenerMensajesUsuario: (usuarioId: string) => of([]),
-  guardarMensaje: async (mensaje: MensajeChat) => Promise.resolve()
-};
+import { FirestoreService } from './firestore';
 
 const openaiServiceMock = {
   convertirHistorialAOpenAI: (historial: MensajeChat[]) => historial,
@@ -20,9 +16,9 @@ const openaiServiceMock = {
 export class ChatService {
   
   private authService = inject(AuthService);
+  private firestoreService = inject(FirestoreService);
 
   // Todavía no implementados:
-  // private firestoreService = inject(FirestoreService);
   // private openaiService = inject(OpenaiService);
   
   // BehaviorSubject para mantener la lista de mensajes del chat actual
@@ -46,22 +42,7 @@ export class ChatService {
     this.cargandoHistorial = true;
     
     try {
-      // this.firestoreService.obtenerMensajesUsuario(usuarioId).subscribe({
-      //   next: (mensajes) => {
-      //     // Actualizamos el BehaviorSubject con los mensajes obtenidos
-      //     this.mensajesSubject.next(mensajes);
-      //     this.cargandoHistorial = false;
-      //   },
-      //   error: (error) => {
-      //     console.error('❌ Error al cargar historial:', error);
-      //     this.cargandoHistorial = false;
-          
-      //     // En caso de error, iniciamos con una lista vacía
-      //     this.mensajesSubject.next([]);
-      //   }
-      // });
-      // 🎭 Usando mock del FirestoreService
-      firestoreServiceMock.obtenerMensajesUsuario(usuarioId).subscribe({
+      this.firestoreService.obtenerMensajesUsuario(usuarioId).subscribe({
         next: (mensajes) => {
           // Actualizamos el BehaviorSubject con los mensajes obtenidos
           this.mensajesSubject.next(mensajes);
@@ -114,8 +95,7 @@ export class ChatService {
       
       // DESPUÉS intentamos guardarlo en Firestore (en background)
       try {
-        // await this.firestoreService.guardarMensaje(mensajeUsuario);
-        await firestoreServiceMock.guardarMensaje(mensajeUsuario);
+        await this.firestoreService.guardarMensaje(mensajeUsuario);
       } catch (firestoreError) {
         // El mensaje ya está visible, así que continuamos
       }
@@ -174,8 +154,7 @@ export class ChatService {
       
       // DESPUÉS intentamos guardar en Firestore (en background)
       try {
-        // await this.firestoreService.guardarMensaje(mensajeAsistente);
-        await firestoreServiceMock.guardarMensaje(mensajeAsistente);
+        await this.firestoreService.guardarMensaje(mensajeAsistente);
       } catch (firestoreError) {
         // El mensaje ya está visible, así que no es crítico
       }
@@ -193,8 +172,7 @@ export class ChatService {
       };
       
       try {
-        // await this.firestoreService.guardarMensaje(mensajeError);
-        await firestoreServiceMock.guardarMensaje(mensajeError);
+        await this.firestoreService.guardarMensaje(mensajeError);
       } catch (saveErrorError) {
         console.error('❌ Error al guardar mensaje de error:', saveErrorError);
         // Como último recurso, mostramos el error temporalmente en la UI
