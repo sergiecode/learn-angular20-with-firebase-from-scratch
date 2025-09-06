@@ -5,7 +5,8 @@
 Indice
 1 Instalaciones necesarias (link al md correspondiente en carpeta clases)
 2 Iniciar proyecto angular (link)
-
+3 explicar-estructura-angular20
+4 
 
 
 
