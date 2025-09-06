@@ -16,7 +16,7 @@ Indice
 11 Componente de Autenticación 
 12 Componente de Chat
 13 Agregar Modelos de Usuario y Chat
-14 
+14 Actualizar Archivo de Configuración
 15
 16
 17
