@@ -13,11 +13,11 @@ Indice
 8 Agregar variables de entorno
 9 Crear Componentes, Servicios, Guard y Modelos
 10 Agregar Rutas 
-11 Componente de Autenticación 
-12 Componente de Chat
-13 Agregar Modelos de Usuario y Chat
-14 Actualizar Archivo de Configuración
-15
+11 Agregar estilos generales
+12 Componente de Autenticación 
+13 Componente de Chat
+14 Agregar Modelos de Usuario y Chat
+15 Actualizar Archivo de Configuración
 16
 17
 18
