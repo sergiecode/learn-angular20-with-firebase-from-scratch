@@ -2,3 +2,32 @@
 
 ---
 
+Indice
+1 Instalaciones necesarias (link al md correspondiente en carpeta clases)
+2 Iniciar proyecto angular (link)
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+**Sergie Code** - Software Engineer líder de equipos de Frontend, profesor de tecnología y conferencista
+
+### 🌐 Sígueme en todas mis redes sociales:
+
+- 📽️ **YouTube**: https://www.youtube.com/@SergieCode
+- 🧑🏼‍💼 **LinkedIn**: https://www.linkedin.com/in/sergiecode/
+- 🐙 **GitHub**: https://github.com/sergiecode  
+- 📸 **Instagram**: https://www.instagram.com/sergiecode
+- 🕊️ **Twitter**: https://twitter.com/sergiecode
+- 🧵 **Threads**: https://www.threads.net/@sergiecode
+- 🎞️ **TikTok**: https://www.tiktok.com/@sergiecode
+- 👤 **Facebook**: https://www.facebook.com/sergiecodeok
