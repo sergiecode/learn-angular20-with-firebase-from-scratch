@@ -63,10 +63,7 @@ export class Chat implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   private async verificarAutenticacion(): Promise<void> {
-    // this.usuario = this.authService.obtenerUsuarioActual();
-    
-    // Simulación de usuario autenticado para desarrollo
-    this.usuario = { uid: 'usuario123', nombre: 'Usuario de Prueba', fotoURL: '' };
+    this.usuario = this.authService.obtenerUsuarioActual();
     
     if (!this.usuario) {
       await this.router.navigate(['/auth']);
@@ -160,7 +157,7 @@ export class Chat implements OnInit, OnDestroy, AfterViewChecked {
       // this.chatService.limpiarChat();
       
       // Cerramos sesión en Firebase
-      // await this.authService.cerrarSesion();
+      await this.authService.cerrarSesion();
       
       // Navegamos al login
       await this.router.navigate(['/auth']);
