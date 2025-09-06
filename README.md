@@ -11,7 +11,17 @@ Indice
 6 Agregar Firebase a Angular 20 parte 1
 7 Introduccion a Open AI
 8 Agregar variables de entorno
-9 
+9 Crear Componentes, Servicios, Guard y Modelos
+10 
+11
+12
+13
+14
+15
+16
+17
+18
+19
 
 
 
