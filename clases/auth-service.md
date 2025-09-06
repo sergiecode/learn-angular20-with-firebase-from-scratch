@@ -1,4 +1,11 @@
-## Clase: AuthService en Angular 20 con Firebase
+# 🔐 Clase 16: AuthService en Angular 20 con Firebase
+
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Crear el servicio de autenticación que manejará el login y logout de usuarios usando Firebase Auth.
 
 ### Paso 1: Crear el servicio AuthService
 Archivo: `src\app\services\auth.ts`

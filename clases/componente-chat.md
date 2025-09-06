@@ -1,5 +1,10 @@
-# Clase12: Componente de Chat con Angular 20, Firebase y OpenAI API
+# 💬 Clase 13: Componente de Chat con Angular 20, Firebase y OpenAI API
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 Este documento describe los pasos e implementación inicial del componente **Chat** dentro de un proyecto en Angular 20 con Firebase, pensado para crear un chat que posteriormente integrará la API de OpenAI. 
 
 Se incluyen los archivos HTML y TypeScript del componente, mientras que el archivo CSS será provisto por separado. El objetivo es centrarnos en la lógica y estructura del componente.

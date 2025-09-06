@@ -1,4 +1,11 @@
-### Clase20 : AuthGuard en Angular 20 con Firebase
+# 🛡️ Clase 20: Implementar AuthGuard en Angular 20 con Firebase
+
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Crear un guard que proteja las rutas de la aplicación, asegurando que solo usuarios autenticados puedan acceder a ciertas páginas.
 
 **Ubicación del archivo:** `src\app\guards\auth-guard.ts`
 

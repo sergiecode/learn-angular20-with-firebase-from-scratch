@@ -1,6 +1,11 @@
-# Crear Componentes, Servicios, Guard y Modelos
+# 🏗️ Clase 9: Crear Componentes, Servicios, Guard y Modelos
 
 [⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Generar la estructura básica de componentes, servicios, guards y modelos necesarios para el proyecto.
 
 ---
 

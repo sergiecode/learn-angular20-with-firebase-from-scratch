@@ -1,5 +1,10 @@
-## Clase: Integración de OpenAI Service en Angular 20 con Firebase
+# 🤖 Clase 19: Integración de OpenAI Service en Angular 20 con Firebase
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 En esta clase se agregará el servicio `OpenaiService` al proyecto para permitir la comunicación con la API de OpenAI y así poder implementar un chat inteligente. Este servicio se encuentra en `src/app/services/openai.ts`.
 
 ```typescript

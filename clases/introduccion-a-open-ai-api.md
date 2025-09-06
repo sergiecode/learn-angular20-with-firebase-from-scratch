@@ -1,6 +1,11 @@
-# Introducción a OpenAI
+# 🤖 Clase 7: Introducción a OpenAI
 
 [⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Conocer y configurar la API de OpenAI para integrarla en nuestro proyecto.
 
 ## 1. Acceder a la plataforma
 - Ir a [OpenAI Platform](https://platform.openai.com/)

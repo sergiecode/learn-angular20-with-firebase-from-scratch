@@ -1,5 +1,10 @@
-## Clase 14 Actualizar Archivo de Configuración
+# ⚙️ Clase 15: Actualizar Archivo de Configuración
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 En este paso configuraremos la aplicación para inicializar los servicios principales: **routing, HTTP, Firebase Auth y Firestore**. Esta configuración se centraliza en un archivo que exporta el objeto `appConfig`, utilizado por Angular para registrar proveedores globales.
 
 ---

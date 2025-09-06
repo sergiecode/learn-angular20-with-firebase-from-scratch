@@ -1,7 +1,10 @@
-# Agregar Variables de Entorno en Angular 20
+# 🔐 Clase 8: Agregar Variables de Entorno en Angular 20
 
 [⬅️ Regresar al índice](../README.md)
 
+---
+
+## 🎯 Objetivo
 En esta clase agregaremos las variables de entorno en Angular 20. Para ello, crearemos la carpeta `environments` dentro de `src` con un archivo para desarrollo (`environment.ts`) y otro para producción (`environment.prod.ts`). En ambos incluiremos las API Keys e información sensible de Firebase y OpenAI.
 
 ## Estructura de archivos

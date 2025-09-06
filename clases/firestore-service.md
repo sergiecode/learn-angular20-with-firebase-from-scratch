@@ -1,5 +1,10 @@
-## Clase 18 FirestoreService para Angular 20 con Firebase
+# 🔥 Clase 18: FirestoreService para Angular 20 con Firebase
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 Este documento explica cómo implementar un servicio de Firestore en un proyecto de Angular 20 para manejar un chat integrado con la API de OpenAI. El código se encuentra en `src\app\services\firestore.ts`.
 
 ```typescript

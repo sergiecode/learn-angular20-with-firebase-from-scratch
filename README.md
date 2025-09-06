@@ -2,37 +2,28 @@
 
 ---
 
-Indice
-1 Instalaciones necesarias (link al md correspondiente en carpeta clases)
-2 Iniciar proyecto angular (link)
-3 explicar-estructura-angular20
-4 Crear repositorio en Github para manejar versiones
-5 Introduccion a Firebase
-6 Agregar Firebase a Angular 20 parte 1
-7 Introduccion a Open AI
-8 Agregar variables de entorno
-9 Crear Componentes, Servicios, Guard y Modelos
-10 Agregar Rutas 
-11 Agregar estilos generales
-12 Componente de Autenticación 
-13 Componente de Chat
-14 Agregar Modelos de Usuario y Chat
-15 Actualizar Archivo de Configuración
-16 Auth Service
-17 Chat Service
-18 Firestore Service
-19 OpenAI Service
-20 Agregar Auth Guard
-21 Despliegue en Firebase Hosting
-
-
-
-
-
-
-
-
-
+## Índice
+1. [Instalaciones necesarias](clases/instalaciones-necesarias.md)
+2. [Iniciar proyecto Angular](clases/iniciar-proyecto-angular20.md)
+3. [Explicar estructura Angular 20](clases/explicar-estructura-angular20.md)
+4. [Crear repositorio en Github para manejar versiones](clases/crear-repo-github.md)
+5. [Introducción a Firebase](clases/introduccion-a-firebase.md)
+6. [Agregar Firebase a Angular 20](clases/agregar-firebase-angular-20.md)
+7. [Introducción a Open AI](clases/introduccion-a-open-ai-api.md)
+8. [Agregar variables de entorno](clases/agregar-variables-de-entorno.md)
+9. [Crear Componentes, Servicios, Guard y Modelos](clases/generar-componentes-y-otros.md)
+10. [Agregar Rutas](clases/agregar-rutas.md)
+11. [Agregar estilos generales](clases/agregar-estilos-generales.md)
+12. [Componente de Autenticación](clases/componente-auth.md)
+13. [Componente de Chat](clases/componente-chat.md)
+14. [Agregar Modelos de Usuario y Chat](clases/agregar-modelos.md)
+15. [Actualizar Archivo de Configuración](clases/actualizar-archivo-configuracion.md)
+16. [Auth Service](clases/auth-service.md)
+17. [Chat Service](clases/chat-service.md)
+18. [Firestore Service](clases/firestore-service.md)
+19. [OpenAI Service](clases/openai-service.md)
+20. [Implementar Auth Guard](clases/implementar-auth-guard.md)
+21. [Despliegue en Firebase Hosting](clases/despliegue-firebase-hosting.md)
 
 ---
 

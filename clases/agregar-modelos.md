@@ -1,5 +1,10 @@
-## Clase 13 Modelos de datos para Angular 20 + Firebase + OpenAI Chat
+# 📊 Clase 14: Modelos de Datos para Angular 20 + Firebase + OpenAI Chat
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 En este proyecto utilizaremos dos modelos principales para estructurar la información: **Usuario** y **Chat**. Estos modelos servirán como contrato de datos para manejar usuarios autenticados mediante Firebase y los mensajes de chat integrados con la API de OpenAI.
 
 ---

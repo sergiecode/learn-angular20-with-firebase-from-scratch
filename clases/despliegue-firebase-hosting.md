@@ -1,4 +1,11 @@
-# Clase 21: Desplegar en Firebase Hosting
+# 🚀 Clase 21: Desplegar en Firebase Hosting
+
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Desplegar la aplicación Angular en Firebase Hosting para que esté disponible en producción.
 
 #### 1. Instalar Firebase CLI
 

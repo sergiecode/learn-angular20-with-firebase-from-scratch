@@ -1,6 +1,11 @@
-# Configuración Inicial del Repositorio para Angular 20 + Firebase + OpenAI Chat
+# 🔗 Clase 4: Crear Repositorio en GitHub
 
-Este documento detalla los pasos para crear y configurar un repositorio de GitHub para un proyecto de Angular 20 con Firebase donde se implementará un chat usando la API de OpenAI.
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Crear y configurar un repositorio de GitHub para el proyecto de Angular 20 con Firebase donde se implementará un chat usando la API de OpenAI.
 
 ## 1. Crear el repositorio en GitHub
 1. Ingresar a [GitHub](https://github.com/)

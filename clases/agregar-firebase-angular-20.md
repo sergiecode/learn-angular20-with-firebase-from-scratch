@@ -1,5 +1,10 @@
-# Agregar Firebase a Angular 20 — Parte 1
+# 🔥 Clase 6: Agregar Firebase a Angular 20
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 Este paso a paso se enfoca únicamente en los puntos que me proporcionaste: instalación de paquetes, creación del proyecto en Firebase, configuración de autenticación y Firestore, y reglas de seguridad.
 
 ---

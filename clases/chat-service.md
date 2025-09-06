@@ -1,5 +1,10 @@
-# Clase 17 ChatService para Angular 20 con Firebase y OpenAI
+# 💬 Clase 17: ChatService para Angular 20 con Firebase y OpenAI
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 Este archivo define el servicio `ChatService` para manejar la lógica del chat dentro de un proyecto Angular 20 que utiliza Firebase y la API de OpenAI.
 
 ```typescript

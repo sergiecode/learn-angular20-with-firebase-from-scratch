@@ -1,7 +1,10 @@
-# Clase 10: Configuración de Rutas en Angular 20 con Firebase y OpenAI API
+# 🛣️ Clase 10: Configuración de Rutas en Angular 20
 
 [⬅️ Regresar al índice](../README.md)
 
+---
+
+## 🎯 Objetivo
 En esta clase vamos a agregar el **sistema de rutas** a nuestro proyecto de Angular 20, que servirá como base para nuestro chat con Firebase y la API de OpenAI.
 
 ## Paso 1: Crear archivo de rutas

@@ -1,4 +1,11 @@
-# Clase 11 Agregar estilos generales de la aplicación
+# 🎨 Clase 11: Agregar Estilos Generales de la Aplicación
+
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
+Configurar los estilos globales de la aplicación para una mejor experiencia de usuario.
 
 1. **styles.css**
    Este archivo contiene los estilos globales de la aplicación.

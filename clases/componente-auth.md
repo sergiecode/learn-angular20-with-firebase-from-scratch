@@ -1,5 +1,10 @@
-# Clase11 : Componente de Autenticación en Angular 20 + Firebase + Chat con OpenAI
+# 🔐 Clase 12: Componente de Autenticación en Angular 20 + Firebase
 
+[⬅️ Regresar al índice](../README.md)
+
+---
+
+## 🎯 Objetivo
 En este paso vamos a crear el componente de autenticación que nos permitirá iniciar sesión con Google utilizando Firebase. Este será el punto de entrada de la aplicación antes de acceder al chat con OpenAI.
 
 ---
