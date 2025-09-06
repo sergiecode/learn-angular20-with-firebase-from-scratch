@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-// import { AuthGuard } from './guards';
+import { AuthGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { 
@@ -16,7 +16,7 @@ export const routes: Routes = [
     path: 'chat', 
     loadComponent: () => import('./components/chat/chat').then(m => m.Chat),
     title: 'Chat - Asistente Virtual',
-    // canActivate: [authGuard] // 🛡️ Ruta protegida con Auth Guard
+    canActivate: [AuthGuard] // 🛡️ Ruta protegida con Auth Guard
   },
   { 
     path: '**', 
