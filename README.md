@@ -12,7 +12,7 @@ Indice
 7 Introduccion a Open AI
 8 Agregar variables de entorno
 9 Crear Componentes, Servicios, Guard y Modelos
-10 
+10 Agregar Rutas 
 11
 12
 13
