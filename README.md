@@ -15,8 +15,8 @@ Indice
 10 Agregar Rutas 
 11 Componente de Autenticación 
 12 Componente de Chat
-13
-14
+13 Agregar Modelos de Usuario y Chat
+14 
 15
 16
 17
