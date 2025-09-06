@@ -6,8 +6,12 @@ Indice
 1 Instalaciones necesarias (link al md correspondiente en carpeta clases)
 2 Iniciar proyecto angular (link)
 3 explicar-estructura-angular20
-4 
-
+4 Introduccion a Firebase
+5 Agregar Firebase a Angular 20
+6 
+7
+8
+9
 
 
 
