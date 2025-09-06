@@ -9,7 +9,7 @@ Indice
 4 Introduccion a Firebase
 5 Agregar Firebase a Angular 20 parte 1
 6 Introduccion a Open AI
-7
+7 Agregar variables de entorno
 8
 9
 
