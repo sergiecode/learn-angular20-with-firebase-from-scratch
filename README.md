@@ -13,7 +13,7 @@ Indice
 8 Agregar variables de entorno
 9 Crear Componentes, Servicios, Guard y Modelos
 10 Agregar Rutas 
-11
+11 Componente de Autenticación 
 12
 13
 14
