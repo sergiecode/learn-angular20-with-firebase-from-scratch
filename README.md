@@ -7,8 +7,8 @@ Indice
 2 Iniciar proyecto angular (link)
 3 explicar-estructura-angular20
 4 Introduccion a Firebase
-5 Agregar Firebase a Angular 20
-6 
+5 Agregar Firebase a Angular 20 parte 1
+6 Introduccion a Open AI
 7
 8
 9
