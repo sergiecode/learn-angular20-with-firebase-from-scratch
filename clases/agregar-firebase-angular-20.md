@@ -67,3 +67,39 @@ service cloud.firestore {
 }
 ```
 
+---
+
+## 6) Registrar App Web
+
+1. En la página principal del proyecto, clic en **Web** (icono **</>**).
+2. Nombre de la app: **angular20-chat-app**.
+3. **NO** habilites Firebase Hosting aquí (lo haremos después).
+4. Clic en **"Registrar app"**.
+5. ⚠️ **Copia la configuración que aparece (la necesitaremos después)**.
+
+### Ejemplo de configuración Firebase (con datos sensibles removidos):
+
+```javascript
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "TU_API_KEY_AQUI",
+  authDomain: "tu-proyecto.firebaseapp.com",
+  projectId: "tu-proyecto-id",
+  storageBucket: "tu-proyecto.firebasestorage.app",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID",
+  measurementId: "TU_MEASUREMENT_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+```
+
