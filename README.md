@@ -14,7 +14,7 @@ Indice
 9 Crear Componentes, Servicios, Guard y Modelos
 10 Agregar Rutas 
 11 Componente de Autenticación 
-12
+12 Componente de Chat
 13
 14
 15

@@ -15,17 +15,27 @@ Puntos importantes:
 - Si ocurre un error, se muestra debajo del botón.
 
 ```html
-<!-- Contenedor principal -->
+<!-- Contenedor principal con diseño responsivo -->
 <div class="auth-container">
+  
+  <!-- Tarjeta principal de autenticación -->
   <div class="auth-card">
+    
+    <!-- Encabezado con logo y título -->
     <div class="auth-header">
-      <div class="logo">💬</div>
+      <div class="logo">
+        💬
+      </div>
       <h1 class="title">Chat Asistente</h1>
-      <p class="subtitle">Bienvenido a tu asistente personal con IA</p>
+      <p class="subtitle">
+        Bienvenido a tu asistente personal con IA
+      </p>
     </div>
-
+    
+    <!-- Contenido principal -->
     <div class="auth-content">
-      <!-- Descripción -->
+      
+      <!-- Descripción de la aplicación -->
       <div class="description">
         <h2>¿Qué puedes hacer?</h2>
         <ul class="features-list">
@@ -35,7 +45,7 @@ Puntos importantes:
           <li>🛡️ Tus datos están seguros con Firebase</li>
         </ul>
       </div>
-
+      
       <!-- Botón de autenticación -->
       <div class="auth-actions">
         <button 
@@ -43,10 +53,10 @@ Puntos importantes:
           (click)="iniciarSesionConGoogle()"
           [disabled]="autenticando"
           [class.loading]="autenticando">
-
+          
+          <!-- Icono de Google -->
           @if (!autenticando) {
             <span class="google-icon">
-              <!-- SVG de Google -->
               <svg width="20" height="20" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -55,35 +65,44 @@ Puntos importantes:
               </svg>
             </span>
           }@else {
-            <span class="spinner"></span>
+              <span class="spinner"></span>
           }
-
+          
+          <!-- Texto del botón -->
           <span class="btn-text">
             {{ autenticando ? 'Iniciando sesión...' : 'Continuar con Google' }}
           </span>
         </button>
-
+        
+        <!-- Mensaje de error si existe -->
         @if (mensajeError) {
-          <div class="error-message">❌ {{ mensajeError }}</div>
+          <div class="error-message">
+            ❌ {{ mensajeError }}
+          </div>
         }
       </div>
-
+      
+      <!-- Información adicional -->
       <div class="info-section">
         <p class="info-text">
           Al continuar, aceptas que utilizamos Google para autenticarte de forma segura.
           No almacenamos tu contraseña.
         </p>
       </div>
+      
     </div>
-
+    
+    <!-- Footer -->
     <div class="auth-footer">
       <p>
         Desarrollado por <strong>Sergie Code</strong> 🚀<br>
         <small>Tutorial Angular 20 + Firebase + ChatGPT</small>
       </p>
     </div>
+    
   </div>
 </div>
+
 ```
 
 ---
@@ -111,6 +130,7 @@ import { AuthService } from '../../services/auth';
   styleUrl: './auth.css'
 })
 export class Auth {
+
   private authService = inject(AuthService);
   private router = inject(Router);
   autenticando = false;
@@ -121,24 +141,25 @@ export class Auth {
     this.autenticando = true;
     
     try {
-      // Llamada real al servicio de autenticación (cuando ya tengamos Firebase configurado)
       // const usuario = await this.authService.iniciarSesionConGoogle();
 
-      // Simulación temporal (para pruebas iniciales)
-      let usuario = null;
+      // Simulación de llamada al servicio de autenticación (reemplazar con la línea anterior en producción)
+      let usuario = null; 
       usuario = await new Promise((resolve) => {
         setTimeout(() => resolve({ nombre: 'Usuario de Prueba' }), 1000);
       });
-
+      
       if (usuario) {
         await this.router.navigate(['/chat']);
+        
       } else {
         this.mensajeError = 'No se pudo obtener la información del usuario';
         console.error('❌ No se obtuvo información del usuario');
       }
+      
     } catch (error: any) {
       console.error('❌ Error durante la autenticación:', error);
-
+      
       if (error.code === 'auth/popup-closed-by-user') {
         this.mensajeError = 'Has cerrado la ventana de autenticación. Intenta de nuevo.';
       } else if (error.code === 'auth/popup-blocked') {
@@ -148,16 +169,13 @@ export class Auth {
       } else {
         this.mensajeError = 'Error al iniciar sesión. Por favor intenta de nuevo.';
       }
+      
     } finally {
       this.autenticando = false;
     }
   }
 
   ngOnInit(): void {
-    // Observamos si el usuario ya está autenticado.
-    // Este observable nos dará la indicación en tiempo real de si redirigir o no al chat.
-    // En este momento está comentado, pero más adelante lo activaremos:
-
     // this.authService.estaAutenticado$.subscribe(autenticado => {
     //   if (autenticado) {
     //     this.router.navigate(['/chat']);
@@ -166,6 +184,12 @@ export class Auth {
   }
 }
 ```
+
+    Hasta que esté la llamada real al servicio de autenticación (cuando ya tengamos Firebase configurado) se simulará con una promesa que devuelve usuario de prueba
+
+    Observamos si el usuario ya está autenticado.
+    estaAutenticado$ nos dará la indicación en tiempo real de si redirigir o no al chat.
+    En este momento está comentado, pero más adelante lo activaremos
 
 ---
 
