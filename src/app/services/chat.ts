@@ -1,8 +1,18 @@
 
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { BehaviorSubject, firstValueFrom, of } from 'rxjs';
 import { MensajeChat } from '../models/chat';
 import { AuthService } from './auth';
+
+const firestoreServiceMock = {
+  obtenerMensajesUsuario: (usuarioId: string) => of([]),
+  guardarMensaje: async (mensaje: MensajeChat) => Promise.resolve()
+};
+
+const openaiServiceMock = {
+  convertirHistorialAOpenAI: (historial: MensajeChat[]) => historial,
+  enviarMensaje: async (contenido: string, historial: any) => 'Respuesta mock de OpenAI'
+};
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +60,21 @@ export class ChatService {
       //     this.mensajesSubject.next([]);
       //   }
       // });
+      // 🎭 Usando mock del FirestoreService
+      firestoreServiceMock.obtenerMensajesUsuario(usuarioId).subscribe({
+        next: (mensajes) => {
+          // Actualizamos el BehaviorSubject con los mensajes obtenidos
+          this.mensajesSubject.next(mensajes);
+          this.cargandoHistorial = false;
+        },
+        error: (error) => {
+          console.error('❌ Error al cargar historial:', error);
+          this.cargandoHistorial = false;
+          
+          // En caso de error, iniciamos con una lista vacía
+          this.mensajesSubject.next([]);
+        }
+      });
       
     } catch (error) {
       console.error('❌ Error al inicializar chat:', error);
@@ -90,6 +115,7 @@ export class ChatService {
       // DESPUÉS intentamos guardarlo en Firestore (en background)
       try {
         // await this.firestoreService.guardarMensaje(mensajeUsuario);
+        await firestoreServiceMock.guardarMensaje(mensajeUsuario);
       } catch (firestoreError) {
         // El mensaje ya está visible, así que continuamos
       }
@@ -104,15 +130,23 @@ export class ChatService {
       // Solo tomamos los últimos 6 mensajes para no exceder límites de tokens
       // Esto deja más espacio para respuestas más completas
 
+      
 
       // const historialParaOpenAI = this.openaiService.convertirHistorialAOpenAI(
       //   mensajesActuales.slice(-6)
       // );
+      const historialParaOpenAI = openaiServiceMock.convertirHistorialAOpenAI(
+        mensajesActuales.slice(-6)
+      );
       
-      // // Enviamos el mensaje a ChatGPT y esperamos la respuesta
+      // Enviamos el mensaje a ChatGPT y esperamos la respuesta (usando mock)
       // const respuestaAsistente = await firstValueFrom(
       //   this.openaiService.enviarMensaje(contenidoMensaje, historialParaOpenAI)
       // );
+      const respuestaAsistente = await openaiServiceMock.enviarMensaje(
+        contenidoMensaje, 
+        historialParaOpenAI
+      );
       
       // Creamos el mensaje con la respuesta del asistente
       // const mensajeAsistente: MensajeChat = {
@@ -126,7 +160,7 @@ export class ChatService {
       // POR AHORA, como no tenemos OpenAI implementado, usamos un mock
       const mensajeAsistente: MensajeChat = {
         usuarioId: usuarioActual.uid,
-        contenido: 'Respuesta mock del asistente (OpenAI no implementado)',
+        contenido: respuestaAsistente,
         fechaEnvio: new Date(),
         tipo: 'asistente',
         estado: 'enviado'
@@ -141,6 +175,7 @@ export class ChatService {
       // DESPUÉS intentamos guardar en Firestore (en background)
       try {
         // await this.firestoreService.guardarMensaje(mensajeAsistente);
+        await firestoreServiceMock.guardarMensaje(mensajeAsistente);
       } catch (firestoreError) {
         // El mensaje ya está visible, así que no es crítico
       }
@@ -159,6 +194,7 @@ export class ChatService {
       
       try {
         // await this.firestoreService.guardarMensaje(mensajeError);
+        await firestoreServiceMock.guardarMensaje(mensajeError);
       } catch (saveErrorError) {
         console.error('❌ Error al guardar mensaje de error:', saveErrorError);
         // Como último recurso, mostramos el error temporalmente en la UI
