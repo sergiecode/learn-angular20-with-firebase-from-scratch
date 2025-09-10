@@ -1,4 +1,4 @@
-# Sergie Code learn-angular20-with-firebase-from-scratch
+# Sergie Code Angular 20 with Firebase and OpenAI 
 
 ---
 
@@ -38,4 +38,5 @@
 - 🕊️ **Twitter**: https://twitter.com/sergiecode
 - 🧵 **Threads**: https://www.threads.net/@sergiecode
 - 🎞️ **TikTok**: https://www.tiktok.com/@sergiecode
+
 - 👤 **Facebook**: https://www.facebook.com/sergiecodeok
